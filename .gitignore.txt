@@ -1,0 +1,23 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+
+# Environment variables / secrets
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and backups
+*.log
+*.bak
+
+# PyCharm or VSCode project settings
+.idea/
+.vscode/
