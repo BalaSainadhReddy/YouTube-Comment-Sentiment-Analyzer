@@ -1,0 +1,5 @@
+Flask
+torch
+transformers
+google-api-python-client
+reportlab
