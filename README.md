@@ -1,28 +1,116 @@
-# 🎥 YouTube Comment Sentiment Analyzer
-
+🎥 YouTube Comment Sentiment Analyzer
 This is a Flask-based web app that:
-- ✅ Fetches YouTube comments using YouTube Data API
-- 🧠 Analyzes sentiment using CardiffNLP and provides summaries via Google Gemini
-- 📊 Displays interactive pie charts and tables
-- 📄 Lets users download a PDF report
 
-## 🚀 Features
-- YouTube comment fetching (up to 300)
-- Sentiment classification: Positive, Negative, Neutral
-- Gemini-powered AI summarization (fallback: Facebook BART)
-- Clean UI with Bootstrap & Chart.js
-- PDF Report generation
+✅ Fetches YouTube comments using the YouTube Data API
 
-## 🔧 Tech Stack
-- Flask (Backend)
-- HuggingFace Transformers (Model)
-- Google Gemini API
-- Chart.js, Bootstrap (Frontend)
-- ReportLab (PDF generation)
+🧠 Analyzes sentiment using CardiffNLP and summarizes using Google Gemini (fallback: Facebook BART)
 
-## 🛠️ Setup Instructions
+📊 Displays sentiment statistics using interactive pie charts
 
-### Clone the repository
-```bash
+📄 Generates a downloadable PDF report with labeled comments
+
+🚀 Features
+🔗 Paste a YouTube video link and analyze up to 300 comments
+
+🤖 Sentiment classification: Positive, Negative, Neutral using Roberta
+
+🧠 Dual-layer summarization using Gemini and BART
+
+📈 Clean visualization using Bootstrap + Chart.js
+
+📄 PDF Report download with all labeled comments
+
+🖼️ App Walkthrough
+1️⃣ Homepage — Welcome Screen
+<img width="1912" height="979" alt="Screenshot 2025-07-11 153517" src="https://github.com/user-attachments/assets/1fa2f8eb-0108-4308-811c-78e438116c45" />
+
+
+The landing page shows a simple clean interface with a prompt to paste the video URL.
+
+2️⃣ Enter YouTube Link
+
+<img width="1912" height="975" alt="Screenshot 2025-07-11 153530" src="https://github.com/user-attachments/assets/e25cdd65-1649-4bf4-8ce6-a492f6e044ae" />
+
+Paste a valid YouTube video link and hit Analyze to begin sentiment processing.
+
+3️⃣ Sentiment Results
+<img width="1901" height="1084" alt="Screenshot 2025-07-11 153443" src="https://github.com/user-attachments/assets/079f3ab8-815d-4c95-85ed-d85263a92083" />
+
+<img width="1671" height="818" alt="Screenshot 2025-07-11 153459" src="https://github.com/user-attachments/assets/d770f8d2-a5b5-4ef8-a920-e625bbcc69d5" />
+
+Shows:
+
+📊 Sentiment pie chart
+
+🥇 Top 5 Positive Comments
+
+💔 Top 5 Negative Comments
+
+🤖 AI Summary (based on sentiment distribution)
+
+🧠 Gemini/BART-generated Summary
+
+4️⃣ PDF Report Download
+
+You can download all labeled comments as a clean, shareable PDF Report.
+
+🧪 Tech Stack
+Layer	Tools Used
+Backend	Flask, Python
+ML/NLP	HuggingFace Transformers, CardiffNLP, BART
+Summarizer	Google Gemini (via google.generativeai)
+Visualization	Chart.js, Bootstrap, Jinja2
+PDF Generation	ReportLab
+API	YouTube Data API v3
+
+🛠️ Setup Instructions
+1. Clone the repository
+bash
+Copy
+Edit
 git clone https://github.com/your-username/youtube-sentiment-analysis.git
 cd youtube-sentiment-analysis
+2. Create a virtual environment
+bash
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
+3. Install dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
+4. Set your API keys in a .env file
+Create a .env file in the root directory with:
+
+ini
+Copy
+Edit
+YOUTUBE_API_KEY=your_youtube_api_key
+GOOGLE_API_KEY=your_gemini_api_key
+5. Run the app
+bash
+Copy
+Edit
+python app.py
+Then open your browser and visit: http://127.0.0.1:5000
+
+📂 Project Structure
+bash
+Copy
+Edit
+.
+├── app.py
+├── templates/
+│   ├── home.html
+│   ├── index.html
+│   └── results.html
+├── requirements.txt
+└── .gitignore
+🙋‍♂️ Contributors
+👨‍💻 Developed by: M.Bala Sainadh Reddy
+
+📜 License
+This project is licensed under the MIT License
+
